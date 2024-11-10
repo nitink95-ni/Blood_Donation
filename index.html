@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Blood Donation</title>
+ 
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="first-heading">
+        <h1>Blood Donation</h1>
+        <div class="phone">
+            <h3>9932737</h3>
+        <h4>info@gmail.com</h4>
+        </div>
+        <div class="location">
+            <h3>Dr B R Ambedkar National Institute of Technology Jalandhar</h3>
+        </div>
+        <div class="day">
+            <h3>9:00 - 18:00</h3>
+        <h4>Monday - Friday</h4>
+        </div>
+       </div>
+       <div class="line"></div>
+    <nav>
+      <ul>
+        <li><a href="#home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#donateBlood" onclick="showSection('donateBlood')">Donate Blood</a></li>
+        <li><a href="#donorCenterLocations" onclick="showSection('donorCenterLocations')">Donor Center Locations</a></li>
+
+        <li><a href="#blood-request-form" onclick="showSection('blood-request-form')">Receive Blood</a></li>
+        <li><a href="#supportUs" onclick="showSection('supportUs')">Support Us</a></li>
+        <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+        <button> Donate </button>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <section id="home" class="content-section home active">
+        <div class="donate-img">
+            <div class="img-text">
+            <h1>Save a Life.</h1>
+            <h1>Donate Blood</h1>
+            <h3>One pint of blood can save the live</h3>
+            <button class="donate-now" onclick="showSection('donateBlood')" >Donate Now</button>
+            <button class="call-now">(123)-456-789</button>
+            </div>
+            <img src="Images/donate.jpg" alt="">
+          </div>
+         <div class="page2">
+            <img src="Images/child.jpg" alt="">
+            <div class="child-desc">
+              <h1>Who We Are</h1>
+              <h3>Your financial gift can help a thousand children who struggle from illnesses. Your gift can provide the necessary medicine, treatment, and other essentials.</h3>
+              <button class="donate-now">Donate Now</button>
+            </div>
+         </div>
+         <div class="page3">
+            <div class="section-title">
+                <span>Get Involved</span>
+                <h2>Ways to Help</h2>
+              </div>
+              <div class="card-container">
+                <!-- Card 1 -->
+                <div class="card">
+                  <img src="Images/blood-donate.jpg" alt="Donate Blood">
+                  <div class="overlay"></div>
+                  <div class="card-content">
+                    <h3>Donate Blood</h3>
+                    <p>Donate blood today. Help save lives.</p>
+                    <button>Learn more</button>
+                  </div>
+                </div>
+          
+                <!-- Card 2 -->
+                <div class="card">
+                  <img src="Images/volunteer.jpg" alt="Volunteer Team">
+                  <div class="overlay"></div>
+                  <div class="card-content">
+                    <h3>Volunteer Team</h3>
+                    <p>We are always looking for your help.</p>
+                    <button>Become a Volunteer</button>
+                  </div>
+                </div>
+          
+                <!-- Card 3 -->
+                <div class="card">
+                  <img src="Images/money.jpg" alt="Donate Money">
+                  <div class="overlay"></div>
+                  <div class="card-content">
+                    <h3>Donate Money</h3>
+                    <p>Your financial gift can help people who need it most.</p>
+                    <button>Donate now</button>
+                  </div>
+                </div>
+              </div>
+         </div>
+    </section>
+
+    <section id="donateBlood" class="content-section donate">
+        <div class="donate-top">
+            <img src="Images/donate.jpg" alt="">
+          <h1>Book An Appointment</h1>
+          </div>
+          <div class="donate-low">
+            <h2>Booking Calender</h2>
+            <h4>Use the Simple appointment scheduling system below</h4>
+          </div>
+          <div class="container">
+            <div class="calendar-container">
+              <div class="calendar-header">
+                <button id="prev-month" class="nav-button">Prev</button>
+                <span id="month-year"></span>
+                <button id="next-month" class="nav-button">Next</button>
+              </div>
+        
+              <div class="calendar">
+                <div class="calendar-days">
+                  <div class="day">Sun</div>
+                  <div class="day">Mon</div>
+                  <div class="day">Tue</div>
+                  <div class="day">Wed</div>
+                  <div class="day">Thu</div>
+                  <div class="day">Fri</div>
+                  <div class="day">Sat</div>
+                </div>
+                <div id="calendar-dates" class="calendar-dates">
+                  <!-- Dates will be dynamically added here -->
+                </div>
+              </div>
+        
+              <!-- Display the selected date -->
+              <div id="selected-date" class="selected-date">
+                No date selected
+              </div>
+            </div>
+        
+            <div class="time-slots-container">
+              <h3>Select a Time</h3>
+              <div id="time-slots">
+                <!-- Time slots will be dynamically added here -->
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <section id="blood-request-form" class="content-section">
+        <h2>Request Blood</h2>
+        <p>If you are in need of blood, please fill out the form below with your blood type, urgency, and contact information. We will connect you with potential donors.</p>
+  
+        <form action="#" method="POST">
+          <label for="blood-group">Blood Group Required</label>
+          <select id="blood-group" name="blood-group" required>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+          </select>
+  
+          <label for="urgency">Urgency Level</label>
+          <select id="urgency" name="urgency" required>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+  
+          <label for="reason">Reason for Request</label>
+          <textarea id="reason" name="reason" rows="4" placeholder="Describe your medical need..." required></textarea>
+  
+          <label for="contact">Your Contact Information</label>
+          <input type="text" id="contact" name="contact" placeholder="Enter your phone number or email" required>
+  
+          <input type="submit" value="Submit Request">
+        </form>
+      </section>
+
+    <section id="appointment" class="content-section">
+      <h2>Appointment</h2>
+      <p>Get in touch with us for more information.</p>
+    </section>
+
+    <section id="supportUs" class="content-section">
+      <h2>Support Us</h2>
+      <p>Get in touch with us for more information.</p>
+    </section>
+
+    <section id="contact" class="content-section">
+      <h2>Contact Us</h2>
+      <p>Get in touch with us for more information.</p>
+    </section>
+  </main>
+
+
+  
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+ <script src="script.js"></script>
+</body> 
+</html>

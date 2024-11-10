@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Website</title>
+  <style>
+    /* Reset basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+    
+
+    /* Header */
+    header {
+      background: linear-gradient(45deg, #e74c3c, #d9534f);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header ul {
+      list-style-type: none;
+    }
+
+    header ul li {
+      display: inline;
+      margin: 0 1.5rem;
+    }
+
+    header ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    header ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Main Content */
+    main {
+      padding: 2rem;
+      margin-top: 20px;
+    }
+
+    section {
+      display: none;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      background: #fff;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease-in-out;
+    }
+
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1, h2 {
+      color: #333;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* Blood Request Form Section */
+    #blood-request-form {
+      padding: 2.5rem;
+      background-color: #fff;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    #blood-request-form h2 {
+      color: #d9534f;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    #blood-request-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #blood-request-form input,
+    #blood-request-form select,
+    #blood-request-form textarea {
+      padding: 1.2rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fafafa;
+      transition: border-color 0.3s;
+    }
+
+    #blood-request-form input:focus,
+    #blood-request-form select:focus,
+    #blood-request-form textarea:focus {
+      border-color: #d9534f;
+      outline: none;
+    }
+
+    #blood-request-form label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    #blood-request-form input[type="submit"] {
+      background-color: #d9534f;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    #blood-request-form input[type="submit"]:hover {
+      background-color: #c0392b;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0077ff;
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .scroll-top:hover {
+      background-color: #00c6ff;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#blood-request-form" onclick="showSection('blood-request-form')">Request Blood</a></li>
+        <li><a href="#about" onclick="showSection('about')">About</a></li>
+        <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <section id="home" class="content-section active">
+      <h1>Welcome to Blood Donation</h1>
+      <p>Donate blood, save lives. Your donation can help those in need during emergencies and surgeries.</p>
+    </section>
+
+    <!-- Blood Request Form Section -->
+    <section id="blood-request-form" class="content-section">
+      <h2>Request Blood</h2>
+      <p>If you are in need of blood, please fill out the form below with your blood type, urgency, and contact information. We will connect you with potential donors.</p>
+
+      <form action="#" method="POST">
+        <label for="blood-group">Blood Group Required</label>
+        <select id="blood-group" name="blood-group" required>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+
+        <label for="urgency">Urgency Level</label>
+        <select id="urgency" name="urgency" required>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <label for="reason">Reason for Request</label>
+        <textarea id="reason" name="reason" rows="4" placeholder="Describe your medical need..." required></textarea>
+
+        <label for="contact">Your Contact Information</label>
+        <input type="text" id="contact" name="contact" placeholder="Enter your phone number or email" required>
+
+        <input type="submit" value="Submit Request">
+      </form>
+    </section>
+
+    <section id="about" class="content-section">
+      <h2>About Us</h2>
+      <p>We are a non-profit organization dedicated to ensuring that blood is available for people in need. We connect blood donors with hospitals and clinics to save lives.</p>
+    </section>
+
+    <section id="contact" class="content-section">
+      <h2>Contact Us</h2>
+      <p>For more information about blood donation, feel free to reach out to us.</p>
+      <p><strong>Email:</strong> info@blooddonation.org</p>
+      <p><strong>Phone:</strong> 123-456-7890</p>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Blood Donation. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+  <!-- JavaScript -->
+  <script>
+    // Function to show a section and hide others
+    function showSection(sectionId) {
+      // Get all content sections
+      const sections = document.querySelectorAll('.content-section');
+      
+      // Loop through each section
+      sections.forEach(section => {
+        // If the section's ID matches the clicked link, show it
+        if (section.id === sectionId) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+    }
+
+    // Function to scroll to top
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
